@@ -87,7 +87,8 @@ class SpecFaker
   end
 
   def add_dependency_args
-    spec.dependencies.map do |dep|
+    runtime_deps = spec.dependencies.select { |d| :runtime == d.type }
+    runtime_deps.map do |dep|
       args = dep.requirements_list
       args.unshift dep.name
       args

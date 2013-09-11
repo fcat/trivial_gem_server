@@ -8,10 +8,4 @@ Gem::Specification.new do |spec|
   spec.authors = ["Christian Neukirchen"]
   spec.email = "chneukirchen@gmail.com"
   spec.homepage = "http://rack.rubyforge.org"
-  spec.add_dependency "bacon", ">= 0"
-  spec.add_dependency "rake", ">= 0"
-  spec.add_dependency "fcgi", ">= 0"
-  spec.add_dependency "memcache-client", ">= 0"
-  spec.add_dependency "mongrel", ">= 0"
-  spec.add_dependency "thin", ">= 0"
 end

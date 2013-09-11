@@ -8,6 +8,4 @@ Gem::Specification.new do |spec|
   spec.authors = ["Christian Neukirchen"]
   spec.email = "chneukirchen@gmail.com"
   spec.homepage = "http://rack.github.com/"
-  spec.add_dependency "bacon", ">= 0"
-  spec.add_dependency "rake", ">= 0"
 end
