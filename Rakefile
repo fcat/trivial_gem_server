@@ -15,7 +15,7 @@ end
 
 desc "Run the server"
 task :serve do
-  `rackup -I lib`
+  `rackup`
 end
 
 desc "Run all tests"
