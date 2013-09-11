@@ -37,15 +37,15 @@ tilt-1.4.1".split.sort
     assert last_response.ok?
     assert_equal 'application/x-gzip', content_type
     assert_equal [
-      ["builder", "3.2.2", "ruby"],
-      ["rack", "1.4.0", "ruby"],
-      ["rack", "1.3.0", "ruby"],
-      ["rack", "1.5.0", "ruby"],
-      ["rack-protection", "1.5.0", "ruby"],
-      ["rack-test", "0.6.2", "ruby"],
-      ["sinatra", "1.3.3", "ruby"],
-      ["sinatra", "1.4.3", "ruby"],
-      ["tilt", "1.4.1", "ruby"]].sort,
+      ["builder", Gem::Version.new("3.2.2"), "ruby"],
+      ["rack", Gem::Version.new("1.4.0"), "ruby"],
+      ["rack", Gem::Version.new("1.3.0"), "ruby"],
+      ["rack", Gem::Version.new("1.5.0"), "ruby"],
+      ["rack-protection", Gem::Version.new("1.5.0"), "ruby"],
+      ["rack-test", Gem::Version.new("0.6.2"), "ruby"],
+      ["sinatra", Gem::Version.new("1.3.3"), "ruby"],
+      ["sinatra", Gem::Version.new("1.4.3"), "ruby"],
+      ["tilt", Gem::Version.new("1.4.1"), "ruby"]].sort,
       extract_zipped_specs
   end
 
@@ -54,12 +54,12 @@ tilt-1.4.1".split.sort
     assert last_response.ok?
     assert_equal 'application/x-gzip', content_type
     assert_equal [
-      ["builder", "3.2.2", "ruby"],
-      ["rack", "1.5.0", "ruby"],
-      ["rack-protection", "1.5.0", "ruby"],
-      ["rack-test", "0.6.2", "ruby"],
-      ["sinatra", "1.4.3", "ruby"],
-      ["tilt", "1.4.1", "ruby"]].sort,
+      ["builder", Gem::Version.new("3.2.2"), "ruby"],
+      ["rack", Gem::Version.new("1.5.0"), "ruby"],
+      ["rack-protection", Gem::Version.new("1.5.0"), "ruby"],
+      ["rack-test", Gem::Version.new("0.6.2"), "ruby"],
+      ["sinatra", Gem::Version.new("1.4.3"), "ruby"],
+      ["tilt", Gem::Version.new("1.4.1"), "ruby"]].sort,
       extract_zipped_specs
   end
 

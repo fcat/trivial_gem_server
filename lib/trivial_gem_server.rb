@@ -87,7 +87,7 @@ class TrivialGemServer::Server < Sinatra::Base
   def send_gip_for_specs(specs)
     overview = specs.sort_by(&:sort_obj).map do |spec|
       platform = spec.original_platform || Gem::Platform::RUBY
-      [spec.name, spec.version.to_s, platform]
+      [spec.name, spec.version, platform]
     end
     content_type 'application/x-gzip'
     Gem.gzip(Marshal.dump(overview))
