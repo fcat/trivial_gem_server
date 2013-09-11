@@ -79,7 +79,7 @@ class TrivialGemServer::Server < Sinatra::Base
   end
 
   def render_text_for_specs specs
-    headers 'content-type' => 'text/plain'
+    content_type 'text/plain'
     specs.map do |s|
       [s.name, s.version.to_s].join('-')
     end.join("\n")
@@ -90,7 +90,7 @@ class TrivialGemServer::Server < Sinatra::Base
       platform = spec.original_platform || Gem::Platform::RUBY
       [spec.name, spec.version.to_s, platform]
     end
-    headers 'content-type' => 'application/x-gzip'
+    content_type 'application/x-gzip'
     Gem.gzip(Marshal.dump(overview))
   end
 
@@ -109,7 +109,7 @@ class TrivialGemServer::Server < Sinatra::Base
   end
 
   def send_rz_for_spec spec
-    headers 'mime-type' => 'application/x-deflate'
+    content_type 'application/x-deflate'
     Gem.deflate(Marshal.dump(spec))
   end
 
