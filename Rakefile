@@ -8,6 +8,10 @@ Rake::TestTask.new("test:integration") do |t|
   t.pattern = "test/integration/**/*_test.rb"
 end
 
+task :fixtures do
+  ruby "-I test script/fake_gems.rb"
+end
+
 task :test => ["test:integration"]
 task :default => :test
 
