@@ -9,10 +9,13 @@ class GetGemspecTest < TrivialGemServer::TestCase
     assert last_response.ok?
     assert_equal 'application/octet-stream', content_type
 
-    source_file = File.expand_path(
+    gem_path = File.expand_path(
       '../../fixtures/gems/cache/rack-1.5.0.gem', __FILE__)
-    expected = File.read source_file
-    assert expected == last_response.body, "response does not match #{source_file} content"
+
+    File.open(gem_path, "rb") do |f|
+      assert last_response.body == f.read,
+        "response does not match #{gem_path} content"
+    end
   end
 
   def test_raises_when_no_gem
