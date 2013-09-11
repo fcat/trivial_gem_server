@@ -1,5 +1,4 @@
 require 'rubygems'
-require 'debugger'
 require 'sinatra/base'
 require 'syck'
 require 'yaml'
