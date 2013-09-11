@@ -1,9 +1,9 @@
 require 'test_helper'
 
-class ServeSpecsTest < TrivialGemServer::TestCase
+class GetSpecsTest < TrivialGemServer::TestCase
   include Rack::Test::Methods
 
-  def test_it_serve_all_specs_as_text
+  def test_it_returns_all_specs_as_text
     get '/specs.txt'
     assert last_response.ok?
     assert_equal 'text/plain', content_type
@@ -19,7 +19,7 @@ tilt-1.4.1".split.sort,
       last_response.body.split.sort
   end
 
-  def test_it_serve_latest_specs_as_text
+  def test_it_returns_latest_specs_as_text
     get '/latest_specs.txt'
     assert last_response.ok?
     assert_equal 'text/plain', content_type
@@ -32,7 +32,7 @@ sinatra-1.4.3
 tilt-1.4.1".split.sort
   end
 
-  def test_it_serve_all_specs_as_gzip
+  def test_it_returns_all_specs_as_gzip
     get '/specs.4.8.gz'
     assert last_response.ok?
     assert_equal 'application/x-gzip', content_type
@@ -49,7 +49,7 @@ tilt-1.4.1".split.sort
       extract_zipped_specs
   end
 
-  def test_it_serve_latest_specs_as_gzip
+  def test_it_returns_latest_specs_as_gzip
     get '/latest_specs.4.8.gz'
     assert last_response.ok?
     assert_equal 'application/x-gzip', content_type

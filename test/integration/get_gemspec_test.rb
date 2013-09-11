@@ -3,7 +3,7 @@ require 'test_helper'
 class GetGemspecTest < TrivialGemServer::TestCase
   include Rack::Test::Methods
 
-  def test_it_serve_spec_as_rz
+  def test_it_returns_spec_as_rz
     get '/quick/Marshal.4.8/rack-1.5.0.gemspec.rz'
     assert last_response.ok?
     assert_equal 'application/x-deflate', content_type
