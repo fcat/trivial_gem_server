@@ -12,6 +12,10 @@ task :fixtures do
   ruby "-I test script/fake_gems.rb"
 end
 
+task :serve do
+  `rackup -I lib`
+end
+
 task :test => ["test:integration"]
 task :default => :test
 
