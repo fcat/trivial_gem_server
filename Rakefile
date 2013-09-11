@@ -8,14 +8,18 @@ Rake::TestTask.new("test:integration") do |t|
   t.pattern = "test/integration/**/*_test.rb"
 end
 
+desc "Build gems needed for the tests"
 task :fixtures do
   ruby "-I test script/fake_gems.rb"
 end
 
+desc "Run the server"
 task :serve do
   `rackup -I lib`
 end
 
+desc "Run all tests"
 task :test => ["test:integration"]
+
 task :default => :test
 
