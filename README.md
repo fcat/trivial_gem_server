@@ -1,4 +1,4 @@
-# `trivial_gem_server`
+# Trivial Gem Server
 
 `trivial_gem_server` is a minimal server for your gems. It aims to be fully compatible with rubygems client.
 
